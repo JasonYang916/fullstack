@@ -2,23 +2,32 @@ import { useState } from 'react'
 
 const Display = props => <h1>{props.value}</h1>
 
-const StatisticsLine = props => <p>{props.name} {props.value}</p>
+const StatisticsLine = (props) => {
+  return (
+      <tr>
+        <td>{props.name}</td>
+        <td>{props.value}</td>
+      </tr>
+  )
+}
 
 const Statistics = (props) => { 
   if (props.good===0 && props.neutral===0 && props.bad===0){
     return (
-      <div>No feedback given</div>
+      <p>No feedback given</p>
     )
   }
   return(
-    <div>
-      <StatisticsLine name='good' value={props.good}/>
-      <StatisticsLine name='neutral' value={props.neutral}/>
-      <StatisticsLine name='bad' value={props.bad}/>
-      <StatisticsLine name='all' value={props.good + props.neutral + props.bad}/>
-      <StatisticsLine name='average' value={(props.good-props.bad)/(props.good+props.neutral+props.bad)}/>
-      <StatisticsLine name='positive' value={(props.good)/(props.good+props.neutral+props.bad) +' %'}/>
-    </div>
+    <table>
+      <tbody>
+        <StatisticsLine name='good' value={props.good}/>
+        <StatisticsLine name='neutral' value={props.neutral}/>
+        <StatisticsLine name='bad' value={props.bad}/>
+        <StatisticsLine name='all' value={props.good + props.neutral + props.bad}/>
+        <StatisticsLine name='average' value={(props.good-props.bad)/(props.good+props.neutral+props.bad)}/>
+        <StatisticsLine name='positive' value={(props.good)/(props.good+props.neutral+props.bad) +' %'}/>
+      </tbody>
+    </table>
   )
 }
 
