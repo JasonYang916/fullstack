@@ -1,20 +1,5 @@
 import { useState } from 'react'
 
-const Max = ({votes, anecdotes}) => {
-  let max = 0;  
-  for (let i = 0; i < anecdotes.length; i++){
-    if(votes[i] > votes[max])
-      max = i;    
-  }
-
-  return(
-    <div>
-      {anecdotes[max]} <br/>
-      <p>has {votes[max]} votes </p>
-    </div>
-  )
-}
-
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often',
@@ -37,6 +22,21 @@ const App = () => {
     setPoints(copy)
   }
 
+  const Max = ({votes, anecdotes}) => {
+    let max = 0;  
+    for (let i = 0; i < anecdotes.length; i++){
+      if(votes[i] > votes[max])
+        max = i;    
+    }
+  
+    return(
+      <div>
+        {anecdotes[max]} <br/>
+        <p>has {votes[max]} votes </p>
+      </div>
+    )
+  }
+  
   return (
     <div>
       <h1>Anecdote of the day</h1>
