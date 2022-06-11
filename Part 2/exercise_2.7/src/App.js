@@ -9,7 +9,7 @@ const App = () => {
   const addName = (event) => {
     event.preventDefault()
     if (persons.filter(person => person.name===newName).length === 1){
-      alert(newName + ' is already in the phonebook')
+      alert(`${newName} is already added to phonebook`)
     }
     else{
       const personObject = {name: newName}
