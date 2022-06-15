@@ -77,12 +77,12 @@ const App = () => {
 
   const show = (event) => {
     event.preventDefault()
-    setShowAll(!showAll)
+    setShowAll(false)
   }
 
   const personsToShow = showAll
     ? persons
-    : persons.filter(person => person.name.toLowerCase() === filterName.toLowerCase())
+    : persons.filter(person => person.name.toLowerCase().includes(filterName.toLowerCase()))
 
   return (
     <div>
