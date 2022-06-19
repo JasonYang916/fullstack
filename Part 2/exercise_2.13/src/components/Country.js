@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
 const Country = ({country, toggle, countryKey}) => {
-    const [show, setShow] = useState(toggle);
+    const [show, setShow] = useState(toggle)
 
     const toggleDisplay = (event) => {
         event.preventDefault()
