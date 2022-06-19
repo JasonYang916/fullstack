@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-import Country from './components/Country'
+import Countries from './components/Countries'
 import Filter from './components/Filter'
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
     return(
         <div>
             <Filter func={show} filter={filterName} handler={handleFilterChange}/>
-            <Country countries={countriesToShow} filterOn={filterOn}/>
+            <Countries countries={countriesToShow} filterOn={filterOn}/>
         </div>
     )
 }
