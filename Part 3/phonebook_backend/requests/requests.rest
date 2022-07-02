@@ -1,2 +1,11 @@
 //get persons
 GET http://localhost:3001/api/persons
+
+###
+//get particular person
+GET http://localhost:3001/api/persons/1
+
+//get particular person
+//expected response: 404 not found
+###
+GET http://localhost:3001/api/persons/0
